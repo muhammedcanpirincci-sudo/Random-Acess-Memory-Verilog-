@@ -1,0 +1,29 @@
+
+module lara(bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8);
+input bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8;
+wire [7:0] Din, Dout;
+wire select, RW, in, out;
+
+output [7:0] dOut;
+
+assign Din[0] = bc1;
+assign Din[1] = bc2;
+assign Din[2] = bc3;
+assign Din[3] = bc4;
+assign Din[4] = bc5;
+assign Din[5] = bc6;
+assign Din[6] = bc7;
+assign Din[7] = bc8;
+
+genvar i;
+  generate
+    for(i = 0; i < 8; i = i + 1)begin : gen_loop1
+			
+		binaryCell bc(Dout[i], Din[i], select, RW);
+
+	end
+  endgenerate
+
+assign dOut = Dout;
+  
+endmodule

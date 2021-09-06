@@ -1,0 +1,27 @@
+module decoder8bit(address, dIn, dOut);
+
+input [7:0] address, dIn;
+output reg [7:0] dOut ;
+
+
+	case(address);
+	
+	8'00000001: assign dOut = lara l1(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000010: assign dOut = lara l2(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000011: assign dOut = lara l3(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000100: assign dOut = lara l4(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000101: assign dOut = lara l5(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000110: assign dOut = lara l6(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00000111: assign dOut = lara l7(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00001000: assign dOut = lara l8(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00001001: assign dOut = lara l9(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+	8'00001010: assign dOut = lara l10(dIn[0], dIn[1], dIn[2], dIn[3], dIn[4], dIn[5], dIn[6], dIn[7]);
+
+	
+	
+	endcase
+
+	
+
+end
+endmodule
